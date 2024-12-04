@@ -1,0 +1,20 @@
+{
+    "login": {
+        "title": "Đăng nhập",
+        "enterName": "Nhập tên của bạn",
+        "enterPassword": "Nhập mật khẩu của bạn",
+        "button": "Đăng nhập",
+        "signUp": "hoặc, đăng ký",
+        "nameRequired": "Tên là bắt buộc.",
+        "invalidEmail": "Vui lòng nhập một email hợp lệ.",
+        "nameLength": "Tên phải từ 8 đến 10 ký tự.",
+        "nameComplexity": "Tên phải có ít nhất một chữ cái (hoa và thường) và một số.",
+        "passwordRequired": "Mật khẩu là bắt buộc.",
+        "invalidPassword": "Mật khẩu phải có ít nhất 8 ký tự, bao gồm một chữ cái, một số và một ký tự đặc biệt.",
+        "passwordNoSpaces": "Mật khẩu không được chứa khoảng trắng.",
+        "formSubmitted": "Gửi biểu mẫu thành công!"
+    },
+    "button": {
+        "lang": "Thay đổi ngôn ngữ"
+    }
+}

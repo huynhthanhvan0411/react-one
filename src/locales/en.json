@@ -1,0 +1,20 @@
+{
+    "login": {
+        "title": "Log in",
+        "enterName": "Enter your name",
+        "enterPassword": "Enter your password",
+        "button": "Log in",
+        "signUp": "or, sign up",
+        "nameRequired": "Name is required.",
+        "invalidEmail": "Please enter a valid email.",
+        "nameLength": "Name must be between 8 and 10 characters.",
+        "nameComplexity": "Name must contain at least one letter (lowercase and uppercase) and one number.",
+        "passwordRequired": "Password is required.",
+        "invalidPassword": "Password must be at least 8 characters long, include one letter, one number, and one special character.",
+        "passwordNoSpaces": "Password cannot contain spaces.",
+        "formSubmitted": "Form submitted successfully!"
+    },
+    "button": {
+        "lang": "Change language"
+    }
+}
