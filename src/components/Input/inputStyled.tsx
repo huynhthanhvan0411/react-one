@@ -5,6 +5,7 @@ export const InputField = styled.input`
   border: 2px solid #898989;
   border-radius: 8px;
   height: 40px;
+  color: #333;
   background-color: #f9f9f9;
 
   &:focus {
@@ -17,4 +18,5 @@ export const TextError = styled.p`
   text-align: left;
   color: red;
   font-size: 12px;
+  margin: 0px;
 `;

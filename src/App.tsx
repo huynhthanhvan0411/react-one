@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Login from './components/FormLogin/FormLogin.tsx'
+import { useEffect, } from 'react'
+import Login from "./pages/Login";
 import "./i18n.ts"; 
+import { useNavigate, BrowserRouter } from "react-router-dom";
+import Router from './routers/Router';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
-      <div className="">
-      <Login/>
+    <BrowserRouter>
+      <div>
+        <Router />
       </div>
-  )
+    </BrowserRouter>
+  );
 }
 
 export default App

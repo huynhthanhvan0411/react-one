@@ -10,6 +10,9 @@ import {
   Title1,
 } from "../FormLogin/formLoginStyled.tsx";
 import ButtonLanguage from "../Button/ButtonLanguage/ButtonLanguage.tsx";
+import axios from "axios";
+import { login } from "../../api/authApi.ts";
+import { useNavigate } from "react-router-dom";
 
 interface FormData {
   name: string;
@@ -21,8 +24,9 @@ interface FormErrors {
   password: string;
 }
 
-const Login = () => {
-  const { t, i18n } = useTranslation(); 
+const LoginForm = () => {
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     password: "",
@@ -33,7 +37,7 @@ const Login = () => {
     password: "",
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     let nameError = "";
@@ -43,15 +47,14 @@ const Login = () => {
       nameError = t("nameRequired");
     } else if (!validateEmail(formData.name)) {
       nameError = t("invalidEmail");
-    } else if (formData.name.length < 8 || formData.name.length > 10) {
-      nameError = t("nameLength");
-    } else if (
-      !/[a-z]/.test(formData.name) ||
-      !/[A-Z]/.test(formData.name) ||
-      !/\d/.test(formData.name)
-    ) {
-      nameError = t("nameComplexity");
     }
+    // } else if (
+    //   !/[a-z]/.test(formData.name) ||
+    //   !/[A-Z]/.test(formData.name) ||
+    //   !/\d/.test(formData.name)
+    // ) {
+    //   nameError = t("nameComplexity");
+    // }
 
     if (!formData.password) {
       passwordError = t("passwordRequired");
@@ -64,12 +67,17 @@ const Login = () => {
     setErrors({ name: nameError, password: passwordError });
 
     if (!nameError && !passwordError) {
-      alert(t("formSubmitted"));
+      try {
+        const result = await login(formData.name, formData.password);
+        navigate("/dashboard");
+      } catch (error) {
+        alert("loginFailed");
+      }
     }
   };
 
   const handleLanguageChange = (lang: string) => {
-    i18n.changeLanguage(lang); 
+    i18n.changeLanguage(lang);
   };
   console.log(t("login.title"));
 
@@ -104,7 +112,8 @@ const Login = () => {
         </FormLogin>
       </div>
     </Div1>
+    // <h1>jfkdjfkdsjfk</h1>
   );
 };
 
-export default Login;
+export default LoginForm;
